@@ -16,7 +16,7 @@ class DemandForecaster:
         y = booking_history[target_col]
         X_scaled = self.scaler.fit_transform(X)
         self.model.fit(X_scaled, y)
-        joblib.dump((self.model, self.scaler), "ai_modules/demand_forecaster.pkl")
+        joblib.dump((self.model, self.scaler), "demand_forecaster.pkl")
 
     def predict(self, upcoming_features: pd.DataFrame) -> pd.Series:
         X_scaled = self.scaler.transform(upcoming_features)

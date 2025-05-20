@@ -16,8 +16,8 @@ class ChurnPredictor:
         y = usage_data[target_col]
         X_scaled = self.scaler.fit_transform(X)
         self.model.fit(X_scaled, y)
-        joblib.dump((self.model, self.scaler), "ai_modules/churn_model.pkl")
+        joblib.dump((self.model, self.scaler), "churn_model.pkl")
 
     def predict(self, member_features: pd.DataFrame) -> pd.Series:
         X_scaled = self.scaler.transform(member_features)
-        return pd.Series(self.model.predict_proba(X_scaled)[:,1], index=member_features.index)
+        return pd.Series(self.model.predict_proba(X_scaled)[:, 1], index=member_features.index)
