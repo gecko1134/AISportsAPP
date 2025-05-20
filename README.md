@@ -1,6 +1,3 @@
-# SportAI Suite – Standalone Full Version
+# SportAI Modular Deployment FULL
 
-Launch using:
-```bash
-streamlit run main_app.py
-```
+Fully interactive and deployable.
