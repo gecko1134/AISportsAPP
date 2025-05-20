@@ -1,3 +1,6 @@
-# SportAI Modular Deployment
+# SportAI Suite – Standalone Full Version
 
-Role-based dashboard system with 100+ modules, PDF/XLSX export, and login control.
+Launch using:
+```bash
+streamlit run main_app.py
+```

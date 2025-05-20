@@ -1,1 +1,8 @@
-{"admin@example.com": {"password": "admin123", "role": "admin"}}
+
+{
+  "admin@example.com": {"password": "admin123", "role": "admin"},
+  "board@example.com": {"password": "board123", "role": "board"},
+  "sponsor@example.com": {"password": "sponsor123", "role": "sponsor"},
+  "foundation@example.com": {"password": "foundation123", "role": "foundation"},
+  "member@example.com": {"password": "member123", "role": "member"}
+}
