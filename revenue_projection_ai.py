@@ -1,0 +1,1 @@
+def run(): print('📊 Revenue Projection AI active')

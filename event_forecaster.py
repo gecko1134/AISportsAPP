@@ -1,0 +1,1 @@
+def run(): print('📅 Event Forecasting AI launched')

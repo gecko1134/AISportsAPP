@@ -1,0 +1,1 @@
+def run(): print('📈 Surface Demand Heatmap AI active')

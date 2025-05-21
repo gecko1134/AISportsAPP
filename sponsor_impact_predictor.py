@@ -1,0 +1,1 @@
+def run(): print('💡 Sponsor Impact Predictor live')

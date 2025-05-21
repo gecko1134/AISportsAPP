@@ -1,0 +1,1 @@
+def run(): print('💸 Financial Risk AI scanning')
