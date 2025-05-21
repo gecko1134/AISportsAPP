@@ -1,1 +1,14 @@
-{"admin@example.com": {"password": "admin123", "role": "admin"}}
+{
+  "admin@example.com": {
+    "password": "admin123",
+    "role": "admin"
+  },
+  "coach@example.com": {
+    "password": "coach123",
+    "role": "coach"
+  },
+  "edu@example.com": {
+    "password": "edu123",
+    "role": "education"
+  }
+}
