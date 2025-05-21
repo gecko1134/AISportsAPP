@@ -1,3 +1,1 @@
-# SportAI Modular Deployment FULL
-
-Fully interactive and deployable.
+# SportAI Modular Deployment with Categorized Modules
