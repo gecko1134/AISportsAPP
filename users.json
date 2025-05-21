@@ -2,13 +2,5 @@
   "admin@example.com": {
     "password": "admin123",
     "role": "admin"
-  },
-  "ref@example.com": {
-    "password": "ref123",
-    "role": "referee"
-  },
-  "med@example.com": {
-    "password": "med123",
-    "role": "medical_staff"
   }
 }

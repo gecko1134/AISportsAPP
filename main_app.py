@@ -5,19 +5,14 @@ import importlib
 
 ROLE_TOOLS = {
     "admin": {
-        "🩺 Injury Log": "modules.ops.injury_log_ai",
-        "🧑‍⚖️ Referee Assigner": "modules.ops.referee_assigner"
-    },
-    "referee": {
-        "🧑‍⚖️ Referee Assigner": "modules.ops.referee_assigner"
-    },
-    "medical_staff": {
-        "🩺 Injury Log": "modules.ops.injury_log_ai"
+        "📊 Revenue Projection": "modules.ai.revenue_projection_ai",
+        "🎯 Grant Scoring": "modules.ai.grant_scoring_ai",
+        "📅 Event Forecasting": "modules.ai.event_forecaster"
     }
 }
 
 def login():
-    st.sidebar.header("🔐 Login")
+    st.sidebar.header("Login")
     email = st.sidebar.text_input("Email")
     password = st.sidebar.text_input("Password", type="password")
     if st.sidebar.button("Login"):
@@ -34,7 +29,7 @@ def logout():
         st.session_state.user = None
 
 def run():
-    st.set_page_config(page_title="SportAI Final Dashboard", layout="wide")
+    st.set_page_config(page_title="SportAI Cloud", layout="wide")
     if "user" not in st.session_state or not st.session_state.user:
         login()
         return
@@ -44,14 +39,14 @@ def run():
     logout()
     tools = ROLE_TOOLS.get(role, {})
     if not tools:
-        st.warning("No tools available for this role.")
+        st.warning("No tools available for your role.")
         return
-    label = st.sidebar.selectbox("Select Tool", list(tools.keys()))
-    if label:
+    choice = st.sidebar.selectbox("Choose a Tool", list(tools.keys()))
+    if choice:
         try:
-            mod = importlib.import_module(tools[label])
+            mod = importlib.import_module(tools[choice])
             mod.run()
         except Exception as e:
-            st.error(f"Tool failed: {e}")
+            st.error(f"Error loading tool: {e}")
 
 run()
