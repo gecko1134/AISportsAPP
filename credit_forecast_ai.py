@@ -1,0 +1,1 @@
+def run(): print('💳 Credit Forecast AI running')

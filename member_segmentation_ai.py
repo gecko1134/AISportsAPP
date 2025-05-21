@@ -1,0 +1,1 @@
+def run(): print('🧩 Member Segmentation AI loaded')

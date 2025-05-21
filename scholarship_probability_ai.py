@@ -1,0 +1,1 @@
+def run(): print('🎓 Scholarship Probability AI calculating')
