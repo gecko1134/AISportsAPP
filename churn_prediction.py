@@ -1,11 +1,11 @@
 
 import pandas as pd
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import StandardScaler
 
-class DemandForecaster:
+class ChurnPredictor:
     def __init__(self):
-        self.model = RandomForestRegressor()
+        self.model = LogisticRegression(max_iter=200)
         self.scaler = StandardScaler()
 
     def train(self, df, features, target):
@@ -16,4 +16,4 @@ class DemandForecaster:
 
     def predict(self, df):
         X_scaled = self.scaler.transform(df)
-        return self.model.predict(X_scaled)
+        return self.model.predict_proba(X_scaled)[:, 1]
