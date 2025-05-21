@@ -1,1 +1,1 @@
-# Final version of main_app.py with real-time AI + role-based dashboards
+# Final main_app.py with auto-load from modules/** and full .run() integration.
