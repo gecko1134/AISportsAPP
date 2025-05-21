@@ -3,11 +3,13 @@ import streamlit as st
 import json
 import importlib
 
-ROLE_TOOLS = {
-    "admin": {
-        "📊 Revenue Projection": "modules.ai.revenue_projection_ai",
-        "🎯 Grant Scoring": "modules.ai.grant_scoring_ai",
-        "📅 Event Forecasting": "modules.ai.event_forecaster"
+CATEGORIES = {
+    "📊 Analytics": {
+        "📜 Donor History Analyzer": "modules.ai.donor_history_analyzer",
+        "📈 Player Development Scorecard": "modules.ai.player_dev_scorecard"
+    },
+    "💼 Finance": {
+        "💰 Budget Planner AI": "modules.ai.budget_planner"
     }
 }
 
@@ -29,24 +31,20 @@ def logout():
         st.session_state.user = None
 
 def run():
-    st.set_page_config(page_title="SportAI Cloud", layout="wide")
+    st.set_page_config(page_title="SportAI Categories", layout="wide")
     if "user" not in st.session_state or not st.session_state.user:
         login()
         return
-    user = st.session_state.user
-    role = user["role"]
-    st.sidebar.success(f"Logged in as {user['email']} ({role})")
     logout()
-    tools = ROLE_TOOLS.get(role, {})
-    if not tools:
-        st.warning("No tools available for your role.")
-        return
-    choice = st.sidebar.selectbox("Choose a Tool", list(tools.keys()))
-    if choice:
-        try:
-            mod = importlib.import_module(tools[choice])
-            mod.run()
-        except Exception as e:
-            st.error(f"Error loading tool: {e}")
+    st.sidebar.success(f"Logged in as {st.session_state.user['email']} ({st.session_state.user['role']})")
+    category = st.sidebar.selectbox("Select Category", list(CATEGORIES.keys()))
+    tools = CATEGORIES[category]
+    tool_label = st.sidebar.selectbox("Select Tool", list(tools.keys()))
+    module_path = tools[tool_label]
+    try:
+        mod = importlib.import_module(module_path)
+        mod.run()
+    except Exception as e:
+        st.error(f"Error loading {tool_label}: {e}")
 
 run()

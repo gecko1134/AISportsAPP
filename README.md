@@ -1,2 +1,2 @@
-# SportAI Reintegrated + Cloud Ready
-Streamlit Cloud launch-ready with user login + tools.
+# SportAI Expanded With Categories
+Includes sidebar category selector and new tools.
