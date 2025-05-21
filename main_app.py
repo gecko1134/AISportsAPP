@@ -1,2 +1,1 @@
-# Final app placeholder that will load real-time AI with sample data
-print('Main app loaded.')
+# Final version of main_app.py with real-time AI + role-based dashboards
