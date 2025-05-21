@@ -1,0 +1,1 @@
+def run(): print('🎓 Workshop Scheduler ready')

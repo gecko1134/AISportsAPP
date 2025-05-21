@@ -1,0 +1,1 @@
+def run(): print('💬 Internal Messaging AI active')

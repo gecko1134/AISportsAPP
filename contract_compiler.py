@@ -1,0 +1,1 @@
+def run(): print('🗂️ Contract Compiler launched')

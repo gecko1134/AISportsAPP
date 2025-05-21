@@ -1,0 +1,1 @@
+def run(): print('🛠️ Incident Report Logger loaded')

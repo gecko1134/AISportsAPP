@@ -1,2 +1,2 @@
-# SportAI Ultra Expanded
-Includes advanced AI tools and sample datasets.
+# SportAI Category Plus Expansion
+New tool categories with live .run() functions.
