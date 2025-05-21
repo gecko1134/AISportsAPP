@@ -4,9 +4,10 @@ import json
 import importlib
 
 CATEGORIES = {
-    "📈 Reporting & Exports": {
-        "📄 PDF Report Generator": "modules.reporting.pdf_report_generator",
-        "📊 Budget Visualizer": "modules.reporting.budget_visualizer"
+    "🧠 Player Performance": {
+        "💪 Strength Tracker": "modules.performance.strength_tracker",
+        "⚡ Speed Analyzer": "modules.performance.speed_analyzer",
+        "🤸 Agility Visualizer": "modules.performance.agility_visualizer"
     }
 }
 
@@ -28,7 +29,7 @@ def logout():
         st.session_state.user = None
 
 def run():
-    st.set_page_config(page_title="SportAI Cloud Suite", layout="wide")
+    st.set_page_config(page_title="SportAI Subdomain Suite", layout="wide")
     if "user" not in st.session_state or not st.session_state.user:
         login()
         return
