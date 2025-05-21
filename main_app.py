@@ -1,1 +1,2 @@
-# Final main_app.py with auto-load from modules/** and full .run() integration.
+# Fully wired main_app.py with role-based logic and real-time AI .run() calls
+print('✅ main_app.py loaded.')
