@@ -1,1 +1,1 @@
-def run(): print('🧑‍⚖️ Referee Assigner operational')
+def run(): print('🧑‍⚖️ Referee Assigner running')

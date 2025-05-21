@@ -6,31 +6,18 @@ import importlib
 ROLE_TOOLS = {
     "admin": {
         "🩺 Injury Log": "modules.ops.injury_log_ai",
-        "🙋 Waiver Tracker": "modules.ops.volunteer_waiver_tracker",
-        "🧑‍⚖️ Referee Assigner": "modules.ops.referee_assigner",
-        "📅 Trainer Scheduler": "modules.ops.trainer_schedule_ai",
-        "📋 Game Checklist": "modules.ops.game_day_checklist"
+        "🧑‍⚖️ Referee Assigner": "modules.ops.referee_assigner"
     },
     "referee": {
         "🧑‍⚖️ Referee Assigner": "modules.ops.referee_assigner"
     },
     "medical_staff": {
-        "🩺 Injury Log": "modules.ops.injury_log_ai",
-        "📅 Trainer Scheduler": "modules.ops.trainer_schedule_ai"
-    },
-    "volunteer": {
-        "🙋 Waiver Tracker": "modules.ops.volunteer_waiver_tracker"
-    },
-    "scheduler_admin": {
-        "📋 Game Checklist": "modules.ops.game_day_checklist"
-    },
-    "event_ops": {
-        "📋 Game Checklist": "modules.ops.game_day_checklist"
+        "🩺 Injury Log": "modules.ops.injury_log_ai"
     }
 }
 
 def login():
-    st.sidebar.header("Login")
+    st.sidebar.header("🔐 Login")
     email = st.sidebar.text_input("Email")
     password = st.sidebar.text_input("Password", type="password")
     if st.sidebar.button("Login"):
@@ -47,7 +34,7 @@ def logout():
         st.session_state.user = None
 
 def run():
-    st.set_page_config(page_title="SportAI Ops Dashboard", layout="wide")
+    st.set_page_config(page_title="SportAI Final Dashboard", layout="wide")
     if "user" not in st.session_state or not st.session_state.user:
         login()
         return
@@ -57,14 +44,14 @@ def run():
     logout()
     tools = ROLE_TOOLS.get(role, {})
     if not tools:
-        st.warning("No tools available for your role.")
+        st.warning("No tools available for this role.")
         return
-    selection = st.sidebar.selectbox("Select Tool", list(tools.keys()))
-    if selection:
+    label = st.sidebar.selectbox("Select Tool", list(tools.keys()))
+    if label:
         try:
-            mod = importlib.import_module(tools[selection])
+            mod = importlib.import_module(tools[label])
             mod.run()
         except Exception as e:
-            st.error(f"Tool failed to run: {e}")
+            st.error(f"Tool failed: {e}")
 
 run()

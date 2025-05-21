@@ -10,17 +10,5 @@
   "med@example.com": {
     "password": "med123",
     "role": "medical_staff"
-  },
-  "vol@example.com": {
-    "password": "vol123",
-    "role": "volunteer"
-  },
-  "sched@example.com": {
-    "password": "sched123",
-    "role": "scheduler_admin"
-  },
-  "ops@example.com": {
-    "password": "ops123",
-    "role": "event_ops"
   }
 }
