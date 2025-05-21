@@ -3,12 +3,24 @@
     "password": "admin123",
     "role": "admin"
   },
-  "coach@example.com": {
-    "password": "coach123",
-    "role": "coach"
+  "ref@example.com": {
+    "password": "ref123",
+    "role": "referee"
   },
-  "edu@example.com": {
-    "password": "edu123",
-    "role": "education"
+  "med@example.com": {
+    "password": "med123",
+    "role": "medical_staff"
+  },
+  "vol@example.com": {
+    "password": "vol123",
+    "role": "volunteer"
+  },
+  "sched@example.com": {
+    "password": "sched123",
+    "role": "scheduler_admin"
+  },
+  "ops@example.com": {
+    "password": "ops123",
+    "role": "event_ops"
   }
 }

@@ -1,0 +1,1 @@
+def run(): print('📅 Trainer Schedule AI loaded')

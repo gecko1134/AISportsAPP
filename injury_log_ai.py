@@ -1,0 +1,1 @@
+def run(): print('🩺 Injury Log AI active')
